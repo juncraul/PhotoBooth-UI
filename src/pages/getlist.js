@@ -1,25 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Slider from 'react-slick';
 
-function MyComponent() {
-  const [data, setData] = useState([]);
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+function ImageDisplay() {
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch('https://photobooth-backend.azurewebsites.net/file-manager/list-files')
-      .then(response => response.json())
-      .then(json => setData(json))
-      .catch(error => console.error(error));
+    async function fetchData() {
+      const response = await axios.get('https://photobooth-backend.azurewebsites.net/file-manager/list-files');
+      setImages(response.data);
+    }
+    fetchData();
   }, []);
+
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <div>
-      <h1>Users:</h1>
-      <ul>
-        {data.map(user => (
-          <li key={user.id}>{user.name}</li>
+      <Slider {...settings}>
+        {images.map((image) => (
+            <img key={image.id} src={`${image.uri}`} alt={image.name} />
         ))}
-      </ul>
+      </Slider>
     </div>
   );
 }
 
-export default MyComponent;
+export default ImageDisplay;
