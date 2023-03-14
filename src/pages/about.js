@@ -10,7 +10,7 @@ const About = () => {
         height: '100vh'
       }}
     >
-      <h1>GeeksforGeeks is a Computer Science portal for geeks.</h1>
+      <h1>This website is a designed to upload images and see them in a gallery.</h1>
     </div>
   );
 };

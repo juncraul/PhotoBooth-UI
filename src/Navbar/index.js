@@ -18,8 +18,11 @@ const Navbar = () => {
           <NavLink to='/about' activestyle="true">
             About
           </NavLink>
-          <NavLink to='/annual' activestyle="true">
-            Annual Report
+          <NavLink to='/uploadFile' activestyle="true">
+            Upload File
+          </NavLink>
+          <NavLink to='/getlist' activestyle="true">
+            Get List
           </NavLink>
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
