@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
-import Home from './pages';
-import About from './pages/about';
-import UploadFile from './pages/uploadFile';
-import GetList from './pages/getlist';
+import Home from './pages/Home';
+import About from './pages/About';
+import UploadFile from './pages/UploadFile';
+import ViewGallery from './pages/ViewGallery';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path='/' exact element={<Home/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/uploadFile' element={<UploadFile/>} />
-        <Route path='/getList' element={<GetList/>} />
+        <Route path='/viewGallery' element={<ViewGallery/>} />
       </Routes>
     </Router>
   );

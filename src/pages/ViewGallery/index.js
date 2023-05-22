@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
 
+import './slick.css'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -29,7 +30,9 @@ function ImageDisplay() {
     <div>
       <Slider {...settings}>
         {images.map((image) => (
-            <img key={image.id} src={`${image.uri}`} alt={image.name} />
+            <div key={image.id} style={{ maxWidth: '100%', maxHeight: '200px' }}>
+              <img src={`${image.uri}`} alt={image.name} style={{ width: '100%', height: 'auto' }} />
+            </div>
         ))}
       </Slider>
     </div>

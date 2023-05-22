@@ -15,14 +15,14 @@ const Navbar = () => {
         <Bars />
   
         <NavMenu>
-          <NavLink to='/about' activestyle="true">
-            About
-          </NavLink>
           <NavLink to='/uploadFile' activestyle="true">
             Upload File
           </NavLink>
-          <NavLink to='/getlist' activestyle="true">
-            Get List
+          <NavLink to='/viewGallery' activestyle="true">
+            View Gallery
+          </NavLink>
+          <NavLink to='/about' activestyle="true">
+            About
           </NavLink>
         </NavMenu>
         <NavBtn>
